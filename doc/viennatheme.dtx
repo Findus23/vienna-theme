@@ -121,7 +121,7 @@
   xrightmargin=0em,
   aboveskip=1em,
   belowskip=1em,
-  morekeywords={usetheme,institute,maketitle,@metropolis@titleformat,%
+  morekeywords={usetheme,institute,maketitle,@vienna@titleformat,%
                 plain,setbeamercolor,metroset,setsansfont,setmonofont},
 }
 \lstMakeShortInline|
@@ -143,10 +143,10 @@
   \end{minipage}
 }
 
-\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\newcommand{\themename}{\textbf{\textsc{vienna}}\xspace}
 
 \usepackage{readprov}
-\ReadPackageInfos{beamerthememetropolis}
+\ReadPackageInfos{beamerthemevienna}
 
 \title{Modern Beamer Presentations with the \themename package}
 \author{Matthias Vogelgesang \\ \url{matthias.vogelgesang@gmail.com}}
@@ -226,7 +226,7 @@ install it manually. Like any \LaTeX\ package, this involves four easy steps:
     of the latest development version.
 
   \item[Compile the style files] by running |make sty| inside the downloaded
-    directory. (Or run \LaTeX{} directly on |source/metropolistheme.ins|.)
+    directory. (Or run \LaTeX{} directly on |source/viennatheme.ins|.)
 
   \item[Move the resulting |*.sty| files] to the folder containing your
     presentation. To use \themename with many presentations, run
@@ -234,7 +234,7 @@ install it manually. Like any \LaTeX\ package, this involves four easy steps:
     instead.
 
   \item[Use the theme for your presentation] by declaring
-    |\usetheme{metropolis}| in the preamble of your Beamer document.
+    |\usetheme{vienna}| in the preamble of your Beamer document.
 \end{description}
 
 \themename uses the Make build system to offer the following installation
@@ -259,7 +259,7 @@ The following code shows a minimal example of a Beamer presentation using
 
 \begin{lstlisting}
 \documentclass{beamer}
-\usetheme{metropolis}       % Use metropolis theme
+\usetheme{vienna}       % Use vienna theme
 \title{A minimal example}
 \date{\today}
 \author{Matthias Vogelgesang}
@@ -305,7 +305,7 @@ To use this theme with \href{http://johnmacfarlane.net/pandoc/}{Pandoc}-based
 presentations, you can run the following command
 
 \begin{lstlisting}
-$ pandoc -t beamer --latex-engine=xelatex -V theme:metropolis -o output.pdf input.md
+$ pandoc -t beamer --latex-engine=xelatex -V theme:vienna -o output.pdf input.md
 \end{lstlisting}
 
 
@@ -317,7 +317,7 @@ The theme provides a number of options, which can be set using a key=value
 interface. The primary way to set options is to provide a comma-separated list
 of option-value pairs when loading \themename in the preamble:
 \begin{lstlisting}
-\usetheme[option1=value1, option2=value2, ...]{metropolis}
+\usetheme[option1=value1, option2=value2, ...]{vienna}
 \end{lstlisting}
 
 Options can be changed at any time --- even mid-presentation! --- with the
@@ -437,10 +437,10 @@ of \themename specific colors, which can also be redefined to your liking.
 \end{lstlisting}
 
 For low-light situations \themename it might be helpful to use the
-|metropolis-highcontrast| color theme. It is enabled like any other color theme:
+|vienna-highcontrast| color theme. It is enabled like any other color theme:
 
 \begin{lstlisting}
-\usecolortheme{metropolis-highcontrast}
+\usecolortheme{vienna-highcontrast}
 \end{lstlisting}
 
 
@@ -589,14 +589,14 @@ the \themename subpackages individually so the \themename color theme is
 never loaded. This will prevent conflicts between the \themename color theme
 and your preferred theme.
 
-For example, overriding the color theme as follows may not work as expected because |\usetheme{metropolis}| loads the \themename color theme, which
+For example, overriding the color theme as follows may not work as expected because |\usetheme{vienna}| loads the \themename color theme, which
 defines a relationship between the frametitle background and the primary
 palette of the theme. Since |seahorse| assumes a different relationship
 between its palettes, the result is a grey, rather than periwinkle,
 frametitle background.
 
 \begin{lstlisting}
-\usetheme{metropolis}
+\usetheme{vienna}
 \usecolortheme{seahorse}
 \end{lstlisting}
 
@@ -604,9 +604,9 @@ The correct colors are chosen if the \themename outer, inner, and font themes
 are loaded seperately:
 
 \begin{lstlisting}
-\useoutertheme{metropolis}
-\useinnertheme{metropolis}
-\usefonttheme{metropolis}
+\useoutertheme{vienna}
+\useinnertheme{vienna}
+\usefonttheme{vienna}
 \usecolortheme{seahorse}   % or your preferred color theme
 \end{lstlisting}
 
@@ -689,11 +689,11 @@ This does not affect any presentations that you create with the theme.
 
 \section{Implementation}
 
-\DocInput{beamerthememetropolis.dtx}
-\DocInput{beamerinnerthememetropolis.dtx}
-\DocInput{beamerouterthememetropolis.dtx}
-\DocInput{beamerfontthememetropolis.dtx}
-\DocInput{beamercolorthememetropolis.dtx}
+\DocInput{beamerthemevienna.dtx}
+\DocInput{beamerinnerthemevienna.dtx}
+\DocInput{beamerouterthemevienna.dtx}
+\DocInput{beamerfontthemevienna.dtx}
+\DocInput{beamercolorthemevienna.dtx}
 \DocInput{pgfplotsthemetol.dtx}
 
 \end{document}

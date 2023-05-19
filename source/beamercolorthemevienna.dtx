@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamercolorthememetropolis}[2017/01/23 Metropolis color theme]
+\ProvidesPackage{beamercolorthemevienna}[2017/01/23 Vienna color theme]
 %</package>
 % \fi
 % \CheckSum{0}
@@ -39,10 +39,10 @@
 %    |theorem| and |example|.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/color/block/.cd,
+  /vienna/color/block/.cd,
     .is choice,
-    transparent/.code=\metropolis@block@transparent,
-    fill/.code=\metropolis@block@fill,
+    transparent/.code=\vienna@block@transparent,
+    fill/.code=\vienna@block@fill,
 }
 %    \end{macrocode}
 % \end{macro}
@@ -52,19 +52,19 @@
 %    of the reverse.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/color/background/.cd,
+  /vienna/color/background/.cd,
     .is choice,
-    dark/.code=\metropolis@colors@dark,
-    light/.code=\metropolis@colors@light,
+    dark/.code=\vienna@colors@dark,
+    light/.code=\vienna@colors@light,
 }
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\metropolis@color@setdefaults}
+% \begin{macro}{\vienna@color@setdefaults}
 %    Sets default values for color theme options.
 %    \begin{macrocode}
-\newcommand{\metropolis@color@setdefaults}{
-  \pgfkeys{/metropolis/color/.cd,
+\newcommand{\vienna@color@setdefaults}{
+  \pgfkeys{/vienna/color/.cd,
     background=light,
     block=transparent,
   }
@@ -91,14 +91,14 @@
 % |alerted text|, and |example text|.
 %
 %    \begin{macrocode}
-\newcommand{\metropolis@colors@dark}{
+\newcommand{\vienna@colors@dark}{
   \setbeamercolor{normal text}{%
     fg=black!2,
     bg=mDarkTeal
   }
   \usebeamercolor[fg]{normal text}
 }
-\newcommand{\metropolis@colors@light}{
+\newcommand{\vienna@colors@light}{
   \setbeamercolor{normal text}{%
     fg=mDarkTeal,
     bg=black!2
@@ -179,7 +179,7 @@
 % if changing colors mid-presentation.
 %
 %    \begin{macrocode}
-\newcommand{\metropolis@block@transparent}{
+\newcommand{\vienna@block@transparent}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -189,7 +189,7 @@
     bg=
   }
 }
-\newcommand{\metropolis@block@fill}{
+\newcommand{\vienna@block@fill}{
   \setbeamercolor{block title}{%
     use=normal text,
     fg=normal text.fg,
@@ -237,8 +237,8 @@
 % \subsubsection{Process package options}
 %
 %    \begin{macrocode}
-\metropolis@color@setdefaults
-\ProcessPgfPackageOptions{/metropolis/color}
+\vienna@color@setdefaults
+\ProcessPgfPackageOptions{/vienna/color}
 %    \end{macrocode}
 %
 %    \begin{macrocode}

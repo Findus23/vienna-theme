@@ -39,5 +39,6 @@
 # Output
 
 *.sty
-doc/metropolistheme.pdf
+doc/viennatheme.pdf
 demo/demo.pdf
+.idea

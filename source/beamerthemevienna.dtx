@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerthememetropolis}
+\ProvidesPackage{beamerthemevienna}
   [2017/01/23 v1.2 Metropolis Beamer theme]
 %</package>
 % \fi
@@ -44,12 +44,12 @@
 % Most options are passed off to the component sub-packages.
 %
 %    \begin{macrocode}
-\pgfkeys{/metropolis/.cd,
+\pgfkeys{/vienna/.cd,
   .search also={
-    /metropolis/inner,
-    /metropolis/outer,
-    /metropolis/color,
-    /metropolis/font,
+    /vienna/inner,
+    /vienna/outer,
+    /vienna/color,
+    /vienna/font,
   }
 }
 %    \end{macrocode}
@@ -58,27 +58,27 @@
 %    Controls the formatting of the text on standout ``plain'' frames.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/titleformat plain/.cd,
+  /vienna/titleformat plain/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@plaintitleformat\@empty%
+      \let\vienna@plaintitleformat\@empty%
       \setbeamerfont{standout}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@plaintitleformat\@empty%
+      \let\vienna@plaintitleformat\@empty%
       \setbeamerfont{standout}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@plaintitleformat\MakeLowercase%
+      \let\vienna@plaintitleformat\MakeLowercase%
       \setbeamerfont{standout}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat plain=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@plaintitleformat\MakeUppercase%
+      \let\vienna@plaintitleformat\MakeUppercase%
       \setbeamerfont{standout}{shape=\normalfont}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat plain=allcaps can lead to problems%
       }
     },
@@ -91,7 +91,7 @@
 %    titles, and the text on standout ``plain'' frames.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/titleformat/.code=\pgfkeysalso{
+  /vienna/titleformat/.code=\pgfkeysalso{
       font/titleformat title=#1,
       font/titleformat subtitle=#1,
       font/titleformat section=#1,
@@ -106,7 +106,7 @@
 % deprecated option names as aliases to the corresponding |key=value| options.
 %
 %    \begin{macrocode}
-\pgfkeys{/metropolis/.cd,
+\pgfkeys{/vienna/.cd,
   usetitleprogressbar/.code=\pgfkeysalso{outer/progressbar=frametitle},
   noslidenumbers/.code=\pgfkeysalso{outer/numbering=none},
   usetotalslideindicator/.code=\pgfkeysalso{outer/numbering=fraction},
@@ -119,8 +119,8 @@
 % Set default values for options.
 %
 %    \begin{macrocode}
-\newcommand{\metropolis@setdefaults}{
-  \pgfkeys{/metropolis/.cd,
+\newcommand{\vienna@setdefaults}{
+  \pgfkeys{/vienna/.cd,
     titleformat plain=regular,
   }
 }
@@ -142,10 +142,10 @@
 % the theme.
 %
 %    \begin{macrocode}
-\useinnertheme{metropolis}
-\useoutertheme{metropolis}
-\usecolortheme{metropolis}
-\usefonttheme{metropolis}
+\useinnertheme{vienna}
+\useoutertheme{vienna}
+\usecolortheme{vienna}
+\usefonttheme{vienna}
 %    \end{macrocode}
 %
 % The |tol| theme for |pgfplots| is only loaded if |pgfplots| is used.
@@ -168,7 +168,7 @@
 % \begin{macro}{\metroset}
 %    Allows the user to change options midway through a presentation.
 %    \begin{macrocode}
-\newcommand{\metroset}[1]{\pgfkeys{/metropolis/.cd,#1}}
+\newcommand{\metroset}[1]{\pgfkeys{/vienna/.cd,#1}}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -177,14 +177,14 @@
 %   or a few words. The format of the text can be set with the
 %   |titleformat plain| option.
 %    \begin{macrocode}
-\def\metropolis@plaintitleformat#1{#1}
+\def\vienna@plaintitleformat#1{#1}
 \newcommand{\plain}[2][]{%
-  \PackageWarning{beamerthememetropolis}{%
+  \PackageWarning{beamerthemevienna}{%
     The syntax `\plain' may be deprecated in a future version of Metropolis.
     Please use a frame with [standout] instead.
   }
   \begin{frame}[standout]{#1}
-    \metropolis@plaintitleformat{#2}
+    \vienna@plaintitleformat{#2}
   \end{frame}
 }
 %    \end{macrocode}
@@ -201,8 +201,8 @@
 % \subsubsection{Process package options}
 %
 %    \begin{macrocode}
-\metropolis@setdefaults
-\ProcessPgfOptions{/metropolis}
+\vienna@setdefaults
+\ProcessPgfOptions{/vienna}
 %    \end{macrocode}
 %
 % \iffalse

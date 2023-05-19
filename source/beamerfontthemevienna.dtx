@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerfontthememetropolis}[2017/01/23 Metropolis font theme]
+\ProvidesPackage{beamerfontthemevienna}[2017/01/23 Metropolis font theme]
 %</package>
 % \fi
 % \CheckSum{0}
@@ -112,7 +112,7 @@
                    BoldItalicFont={Fira Sans Italic OT}]%
                   {Fira Sans Light OT}%
     }{%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Could not find Fira Sans fonts%
       }
     }
@@ -123,7 +123,7 @@
     \iffontsavailable{Fira Mono OT, Fira Mono Bold OT}{%
       \setmonofont[BoldFont={Fira Mono Medium OT}]{Fira Mono OT}%
     }{%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Could not find Fira Mono fonts%
       }
     }
@@ -132,7 +132,7 @@
     \addfontfeature{Numbers={Monospaced}}%
   }
 }{%
-  \PackageWarning{beamerthememetropolis}{%
+  \PackageWarning{beamerthemevienna}{%
     You need to compile with XeLaTeX or LuaLaTeX to use the Fira fonts%
   }
 }
@@ -184,27 +184,27 @@
 %    Controls the format of the title.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/font/titleformat title/.cd,
+  /vienna/font/titleformat title/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@titleformat\@empty%
+      \let\vienna@titleformat\@empty%
       \setbeamerfont{title}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@titleformat\@empty%
+      \let\vienna@titleformat\@empty%
       \setbeamerfont{title}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@titleformat\lowercase%
+      \let\vienna@titleformat\lowercase%
       \setbeamerfont{title}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat title=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@titleformat\uppercase%
+      \let\vienna@titleformat\uppercase%
       \setbeamerfont{title}{shape=\normalfont}
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat title=allcaps can lead to problems%
       }
     },
@@ -216,27 +216,27 @@
 %    Control the format of the subtitle.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/font/titleformat subtitle/.cd,
+  /vienna/font/titleformat subtitle/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@subtitleformat\@empty%
+      \let\vienna@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@subtitleformat\@empty%
+      \let\vienna@subtitleformat\@empty%
       \setbeamerfont{subtitle}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@subtitleformat\lowercase%
+      \let\vienna@subtitleformat\lowercase%
       \setbeamerfont{subtitle}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat subtitle=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@subtitleformat\uppercase%
+      \let\vienna@subtitleformat\uppercase%
       \setbeamerfont{subtitle}{shape=\normalfont}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat subtitle=allcaps can lead to problems%
       }
     },
@@ -248,27 +248,27 @@
 %    Controls the format of the section title.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/font/titleformat section/.cd,
+  /vienna/font/titleformat section/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@sectiontitleformat\@empty%
+      \let\vienna@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@sectiontitleformat\@empty%
+      \let\vienna@sectiontitleformat\@empty%
       \setbeamerfont{section title}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@sectiontitleformat\MakeLowercase%
+      \let\vienna@sectiontitleformat\MakeLowercase%
       \setbeamerfont{section title}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat section=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@sectiontitleformat\MakeUppercase%
+      \let\vienna@sectiontitleformat\MakeUppercase%
       \setbeamerfont{section title}{shape=\normalfont}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat section=allcaps can lead to problems%
       }
     },
@@ -280,27 +280,27 @@
 %    Control the format of the frame title.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/font/titleformat frame/.cd,
+  /vienna/font/titleformat frame/.cd,
     .is choice,
     regular/.code={%
-      \let\metropolis@frametitleformat\@empty%
+      \let\vienna@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\normalfont}%
     },
     smallcaps/.code={%
-      \let\metropolis@frametitleformat\@empty%
+      \let\vienna@frametitleformat\@empty%
       \setbeamerfont{frametitle}{shape=\scshape}%
     },
     allsmallcaps/.code={%
-      \let\metropolis@frametitleformat\MakeLowercase%
+      \let\vienna@frametitleformat\MakeLowercase%
       \setbeamerfont{frametitle}{shape=\scshape}%
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat frame=allsmallcaps can lead to problems%
       }
     },
     allcaps/.code={%
-      \let\metropolis@frametitleformat\MakeUppercase%
+      \let\vienna@frametitleformat\MakeUppercase%
       \setbeamerfont{frametitle}{shape=\normalfont}
-      \PackageWarning{beamerthememetropolis}{%
+      \PackageWarning{beamerthemevienna}{%
         Be aware that titleformat frame=allcaps can lead to problems%
       }
     },
@@ -313,7 +313,7 @@
 %    declaration, where \LaTeX{} automatically removes all spaces.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/font/.cd,
+  /vienna/font/.cd,
   titleformattitle/.code=\pgfkeysalso{titleformat title=#1},
   titleformatsubtitle/.code=\pgfkeysalso{titleformat subtitle=#1},
   titleformatsection/.code=\pgfkeysalso{titleformat section=#1},
@@ -322,11 +322,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\metropolis@font@setdefaults}
+% \begin{macro}{\vienna@font@setdefaults}
 %    Sets default values for font theme options.
 %    \begin{macrocode}
-\newcommand{\metropolis@font@setdefaults}{
-  \pgfkeys{/metropolis/font/.cd,
+\newcommand{\vienna@font@setdefaults}{
+  \pgfkeys{/vienna/font/.cd,
     titleformat title=regular,
     titleformat subtitle=regular,
     titleformat section=regular,
@@ -339,10 +339,10 @@
 % We first define hooks to change the case format of the titles.
 %
 %    \begin{macrocode}
-\def\metropolis@titleformat#1{#1}
-\def\metropolis@subtitleformat#1{#1}
-\def\metropolis@sectiontitleformat#1{#1}
-\def\metropolis@frametitleformat#1{#1}
+\def\vienna@titleformat#1{#1}
+\def\vienna@subtitleformat#1{#1}
+\def\vienna@sectiontitleformat#1{#1}
+\def\vienna@frametitleformat#1{#1}
 %    \end{macrocode}
 %
 % To make the uppercase and lowercase macros work in the title, subtitle, etc.,
@@ -354,62 +354,62 @@
 %    \begin{macrocode}
 \patchcmd{\beamer@title}%
   {\def\inserttitle{#2}}%
-  {\def\inserttitle{\metropolis@titleformat{#2}}}%
+  {\def\inserttitle{\vienna@titleformat{#2}}}%
   {}%
-  {\PackageError{beamerfontthememetropolis}{Patching title failed}\@ehc}
+  {\PackageError{beamerfontthemevienna}{Patching title failed}\@ehc}
 \patchcmd{\beamer@subtitle}%
   {\def\insertsubtitle{#2}}%
-  {\def\insertsubtitle{\metropolis@subtitleformat{#2}}}%
+  {\def\insertsubtitle{\vienna@subtitleformat{#2}}}%
   {}%
-  {\PackageError{beamerfontthememetropolis}{Patching subtitle failed}\@ehc}
+  {\PackageError{beamerfontthemevienna}{Patching subtitle failed}\@ehc}
 \patchcmd{\sectionentry}
   {\def\insertsectionhead{#2}}
-  {\def\insertsectionhead{\metropolis@sectiontitleformat{#2}}}
+  {\def\insertsectionhead{\vienna@sectiontitleformat{#2}}}
   {}
-  {\PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc}
+  {\PackageError{beamerfontthemevienna}{Patching section title failed}\@ehc}
 \@tempswafalse
 \patchcmd{\beamer@section}
   {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
   {\edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{\unexpanded{#1}}}}}
+    \noexpand\vienna@sectiontitleformat{\unexpanded{#1}}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@section}
   {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
   {\def\insertsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \metropolis@sectiontitleformat{#1}}}}
+    \vienna@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@section}
   {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
   {\protected@edef\insertsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{#1}}}}
+    \noexpand\vienna@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \if@tempswa\else
-  \PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc
+  \PackageError{beamerfontthemevienna}{Patching section title failed}\@ehc
 \fi
 \@tempswafalse
 \patchcmd{\beamer@subsection}
   {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{\unexpanded{#1}}}}
   {\edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{\unexpanded{#1}}}}}
+    \noexpand\vienna@sectiontitleformat{\unexpanded{#1}}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@subsection}
   {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{#1}}}
   {\def\insertsubsectionhead{\hyperlink{Navigation\the\c@page}{%
-    \metropolis@sectiontitleformat{#1}}}}
+    \vienna@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \patchcmd{\beamer@subsection}
   {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{#1}}}
   {\protected@edef\insertsubsectionhead{\noexpand\hyperlink{Navigation\the\c@page}{%
-    \noexpand\metropolis@sectiontitleformat{#1}}}}
+    \noexpand\vienna@sectiontitleformat{#1}}}}
   {\@tempswatrue}
   {}
 \if@tempswa\else
-  \PackageError{beamerfontthememetropolis}{Patching section title failed}\@ehc
+  \PackageError{beamerfontthemevienna}{Patching section title failed}\@ehc
 \fi
 %    \end{macrocode}
 %
@@ -425,14 +425,14 @@
     \gdef\beamer@shortframetitle{#1}%
     }}
   {{%
-      \gdef\insertframetitle{{\metropolis@frametitleformat{#2}\ifnum%
+      \gdef\insertframetitle{{\vienna@frametitleformat{#2}\ifnum%
       \beamer@autobreakcount>0\relax{}\space%
       \usebeamertemplate*{frametitle continuation}\fi}}%
     \gdef\beamer@frametitle{#2}%
     \gdef\beamer@shortframetitle{#1}%
     }}
   {}
-  {\PackageError{beamerfontthememetropolis}{Patching frame title failed}\@ehc}
+  {\PackageError{beamerfontthemevienna}{Patching frame title failed}\@ehc}
 %    \end{macrocode}
 %
 %
@@ -440,8 +440,8 @@
 % \subsubsection{Process package options}
 %
 %    \begin{macrocode}
-\metropolis@font@setdefaults
-\ProcessPgfPackageOptions{/metropolis/font}
+\vienna@font@setdefaults
+\ProcessPgfPackageOptions{/vienna/font}
 %    \end{macrocode}
 % \iffalse
 %</package>
