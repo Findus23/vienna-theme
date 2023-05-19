@@ -59,6 +59,9 @@ ctan: $(CTAN_CONTENT) ctan-version
 ctan-version:
 	@sed -i 's@20[0-9][0-9]/[0-9]*/[0-9]*@$(shell date "+%Y/%m/%d")@' $(PACKAGE_SRC)
 
+upload: $(DOC_PDF) $(DEMO_PDF)
+	rsync -aPz $(DEMO_PDF) $(DOC_PDF) lw1.at:/var/www/static/vienna-theme/
+
 $(CACHE_DIR):
 	@mkdir -p $(CACHE_DIR)
 

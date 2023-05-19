@@ -15,7 +15,7 @@ offers is an (optional) progress bar added to each slide. The core design
 principles of the original Metropolis theme were described in a blog post
 [here](http://bloerg.net/2014/09/20/a-modern-beamer-theme.html).
 
-Not convinced? Have a look at the [demo slides][].
+Not convinced? Have a look at the [demo slides][] or read the [manual][].
 
 ![Sample](./demo/demo.png)
 
@@ -74,5 +74,5 @@ copyright notice header and license it under the same CC-BY-SA license. This
 does not affect the presentation that you create with the theme.
 
 
-[demo slides]: https://example.com
-[manual]: https://example.com
+[demo slides]: https://lw1.at/s/vienna-theme/demo.pdf
+[manual]: https://lw1.at/s/vienna-theme/viennatheme.pdf
