@@ -68,7 +68,7 @@ $(DOC_PDF): $(DOC_SRC) $(PACKAGE_STY) | clean-cache $(CACHE_DIR)
 	@cp $(CACHE_DIR)/$(notdir $(DOC_PDF)) $(DOC_PDF)
 
 $(DEMO_PDF): $(DEMO_SRC) $(PACKAGE_STY) | clean-cache $(CACHE_DIR)
-	@cd $(dir $(DEMO_SRC)) && $(COMPILE_TEX) $(notdir $(DEMO_SRC))
+	@cd $(dir $(DEMO_SRC)) && $(COMPILE_TEX) demo/demo.tex
 	@cp $(CACHE_DIR)/$(notdir $(DEMO_PDF)) $(DEMO_PDF)
 
 docker-run: docker-build
