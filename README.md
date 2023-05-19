@@ -1,11 +1,11 @@
-## Metropolis
+## Vienna Beamer Theme
 
 
-**IMPORTANT NOTICES FOR VERSION 1.0**
+This is a fork of the amazing [Metropolis Theme](https://github.com/matze/mtheme) by Matthias Vogelgesang.
 
-* The package and theme name changed from *m* to *metropolis*!
-* The `title format` values have been restructured. Please refer to the
-  [manual][].
+Most changes here are inspired by the open PRs in https://github.com/matze/mtheme/pulls or adaptations I use in my presentations.
+
+
 
 ---
 
