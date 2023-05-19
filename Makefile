@@ -71,6 +71,12 @@ $(DEMO_PDF): $(DEMO_SRC) $(PACKAGE_STY) | clean-cache $(CACHE_DIR)
 	@cd $(dir $(DEMO_SRC)) && $(COMPILE_TEX) demo/demo.tex
 	@cp $(CACHE_DIR)/$(notdir $(DEMO_PDF)) $(DEMO_PDF)
 
+
+demo/demo.png: $(DEMO_PDF) | clean-cache $(CACHE_DIR)
+	pdftoppm $(DEMO_PDF) $(CACHE_DIR)/slides -png -scale-to 1000
+	montage -mode concatenate -tile 2x2 $(CACHE_DIR)/slides-01.png $(CACHE_DIR)/slides-03.png $(CACHE_DIR)/slides-04.png $(CACHE_DIR)/slides-29.png demo/demo.png
+
+
 docker-run: docker-build
 	docker run --rm=true --name $(DOCKER_CONTAINER) -i -t -v `pwd`:/data $(DOCKER_IMAGE) make
 
