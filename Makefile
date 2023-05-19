@@ -30,6 +30,9 @@ doc: $(DOC_PDF)
 
 demo: $(DEMO_PDF)
 
+image: demo/demo.png
+
+
 clean: clean-cache clean-sty
 
 install: $(PACKAGE_STY) $(DOC_PDF)
