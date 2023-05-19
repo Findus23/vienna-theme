@@ -17,10 +17,7 @@ CACHE_DIR   := $(shell pwd)/.latex-cache
 COMPILE_TEX := latexmk -lualatex -output-directory=$(CACHE_DIR)
 export TEXINPUTS:=$(shell pwd):$(shell pwd)/source:${TEXINPUTS}
 
-DOCKER_IMAGE = latex-image
-DOCKER_CONTAINER = latex-container
-
-.PHONY: all sty doc demo clean install uninstall ctan clean-cache clean-sty ctan-version docker-run docker-build docker-rm
+.PHONY: all sty doc demo clean install uninstall ctan clean-cache clean-sty ctan-version
 
 all: sty doc
 
@@ -82,12 +79,3 @@ demo/demo.png: $(DEMO_PDF) | clean-cache $(CACHE_DIR)
 	pdftoppm $(DEMO_PDF) $(CACHE_DIR)/slides -png -scale-to 1000
 	montage -mode concatenate -tile 2x2 $(CACHE_DIR)/slides-01.png $(CACHE_DIR)/slides-03.png $(CACHE_DIR)/slides-04.png $(CACHE_DIR)/slides-29.png demo/demo.png
 
-
-docker-run: docker-build
-	docker run --rm=true --name $(DOCKER_CONTAINER) -i -t -v `pwd`:/data $(DOCKER_IMAGE) make
-
-docker-build:
-	docker build -t $(DOCKER_IMAGE) docker
-
-docker-rm:
-	docker rm $(DOCKER_CONTAINER)
