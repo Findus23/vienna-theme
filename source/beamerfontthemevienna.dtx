@@ -87,33 +87,33 @@
 % \end{macro}
 %
 % We search for regular, italic, light, light italic, mono, and mono bold
-% fonts under the default |Fira Sans| and |Fira Mono| names. If this fails,
+% fonts under the default |Inter| and |Fira Mono| names. If this fails,
 % the suffix OT --- used by some Linux distributions --- will be tried. If this
 % also fails, a warning will be displayed and the standard fonts will be used.
 %
 %    \begin{macrocode}
-  \iffontsavailable{Fira Sans Light,%
-                    Fira Sans Light Italic,%
-                    Fira Sans,%
-                    Fira Sans Italic}%
+  \iffontsavailable{Inter Light,%
+                    Inter Light Italic,%
+                    Inter,%
+                    Inter Italic}%
   {%
-    \setsansfont[ItalicFont={Fira Sans Light Italic},%
-                 BoldFont={Fira Sans},%
-                 BoldItalicFont={Fira Sans Italic}]%
-                {Fira Sans Light}%
+    \setsansfont[ItalicFont={Inter Light Italic},%
+                 BoldFont={Inter},%
+                 BoldItalicFont={Inter Italic}]%
+                {Inter Light}%
   }{%
-    \iffontsavailable{Fira Sans Light OT,%
-                      Fira Sans Light Italic OT,%
-                      Fira Sans OT,%
-                      Fira Sans Italic OT}%
+    \iffontsavailable{Inter Light OT,%
+                      Inter Light Italic OT,%
+                      Inter OT,%
+                      Inter Italic OT}%
     {%
-      \setsansfont[ItalicFont={Fira Sans Light Italic OT},%
-                   BoldFont={Fira Sans OT},%
-                   BoldItalicFont={Fira Sans Italic OT}]%
-                  {Fira Sans Light OT}%
+      \setsansfont[ItalicFont={Inter Light Italic OT},%
+                   BoldFont={Inter OT},%
+                   BoldItalicFont={Inter Italic OT}]%
+                  {Inter Light OT}%
     }{%
       \PackageWarning{beamerthemevienna}{%
-        Could not find Fira Sans fonts%
+        Could not find Inter fonts%
       }
     }
   }
