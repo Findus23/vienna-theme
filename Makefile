@@ -12,7 +12,7 @@ CTAN_CONTENT = README.md $(INS) $(PACKAGE_SRC) $(DOC_SRC) $(DOC_PDF) $(DEMO_SRC)
 DESTDIR     ?= $(shell kpsewhich -var-value=TEXMFHOME)
 INSTALL_DIR  = $(DESTDIR)/tex/latex/vienna
 DOC_DIR      = $(DESTDIR)/doc/latex/vienna
-CACHE_DIR   := $(shell pwd)/.latex-cache
+CACHE_DIR   := "$(shell pwd)"/.latex-cache
 
 COMPILE_TEX := latexmk -lualatex -output-directory=$(CACHE_DIR)
 export TEXINPUTS:=$(shell pwd):$(shell pwd)/source:${TEXINPUTS}
@@ -78,4 +78,3 @@ $(DEMO_PDF): $(DEMO_SRC) $(PACKAGE_STY) | clean-cache $(CACHE_DIR)
 demo/demo.png: $(DEMO_PDF) | clean-cache $(CACHE_DIR)
 	pdftoppm $(DEMO_PDF) $(CACHE_DIR)/slides -png -scale-to 1000
 	montage -mode concatenate -tile 2x2 $(CACHE_DIR)/slides-01.png $(CACHE_DIR)/slides-03.png $(CACHE_DIR)/slides-04.png $(CACHE_DIR)/slides-29.png demo/demo.png
-

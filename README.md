@@ -25,7 +25,7 @@ Not convinced? Have a look at the [demo slides][] or read the [manual][].
 To install a stable version of this theme, please refer to update instructions
 of your TeX distribution. 
 
-Installing Metropolis from source, like any Beamer theme, involves four easy
+Installing Vienna from source, like any Beamer theme, involves four easy
 steps:
 
 1. **Download the source** with a `git clone` of the [Vienna repository](https://github.com/Findus23/vienna-theme)
@@ -34,7 +34,7 @@ steps:
 2. **Compile the style files** by running `make sty` inside the downloaded
     directory. (Or run LaTeX directly on `source/viennatheme.ins`.)
 3. **Move the resulting `*.sty` files** to the folder containing your
-   presentation. To use Metropolis with many presentations, run `make install`
+   presentation. To use Vienna with many presentations, run `make install`
    or move the `*.sty` files to a folder in your TeX path instead.
 4. **Use the theme for your presentation** by declaring `\usetheme{vienna}` in
     the preamble of your Beamer document.
@@ -44,7 +44,7 @@ steps:
 ## Usage
 
 The following code shows a minimal example of a Beamer presentation using
-Metropolis.
+Vienna.
 
 ```latex
 \documentclass{beamer}
@@ -62,7 +62,7 @@ Metropolis.
 \end{document}
 ```
 
-Detailed information on using Metropolis can be found in the [manual][].
+Detailed information on using Vienna can be found in the [manual][].
 
 
 ## License
